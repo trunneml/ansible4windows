@@ -9,8 +9,8 @@ RUN cd /usr/local/lib/python2.7/site-packages/ansible/plugins/connection && \
   patch < /tmp/ssh.py.patch
 
 # Configure Ansible
-RUN mkdir -p /etc/ansible
-COPY ansible.cfg /etc/ansible/ansible.cfg
+ENV ANSIBLE_HOST_KEY_CHECKING False
+ENV ANSIBLE_INVENTORY /ansible/hosts
 
 # Preparing ssh-agent with an entrypoint script
 COPY entrypoint.sh /entrypoint.sh
