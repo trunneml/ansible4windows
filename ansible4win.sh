@@ -1,2 +1,2 @@
 #!/bin/bash
-docker run --rm -v `pwd`:/home/ansible -it trunneml/ansible4windows $@
+docker run --rm -v `pwd`:/ansible -it trunneml/ansible4windows $@
