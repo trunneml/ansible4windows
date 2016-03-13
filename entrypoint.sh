@@ -6,9 +6,11 @@ trap finish EXIT
 
 function start {
   eval `ssh-agent -s` > /dev/null
-  for k in `ls keys`; do
-    ssh-add keys/$k
-  done
+  if [ -d ${SSH_KEYS} ]; then
+    for k in `ls ${SSH_KEYS}`; do
+      ssh-add keys/$k
+    done
+  fi
 }
 
 start

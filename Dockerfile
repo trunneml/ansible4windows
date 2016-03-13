@@ -11,6 +11,7 @@ RUN cd /usr/local/lib/python2.7/site-packages/ansible/plugins/connection && \
 # Configure Ansible
 ENV ANSIBLE_HOST_KEY_CHECKING False
 ENV ANSIBLE_INVENTORY /ansible/hosts
+ENV SSH_KEYS /ansible/keys
 
 # Preparing ssh-agent with an entrypoint script
 COPY entrypoint.sh /entrypoint.sh
